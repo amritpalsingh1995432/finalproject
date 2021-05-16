@@ -2,9 +2,6 @@
 $id = $_GET["id"];
 $user_id = $_SESSION['id'];
 ?>
-<?php
-if(empty($user_id) && ($usertypt != "buyer")){
-?>
 <div class="container">
 	<div class="row">	
 		<?php
@@ -44,15 +41,6 @@ if(empty($user_id) && ($usertypt != "buyer")){
 		</div>
 	</div>
 </div>
-<?php }else{ ?>
-	<div class="container">
-		<div class="row">
-			<div class='notification'>Please login with a valid buyer account in order to access this area.</div>
-		</div>
-	</div>
-<?php
-	}
-?>
 <?php include("footer.php"); ?>
 
 <?php 

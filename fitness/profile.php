@@ -83,7 +83,7 @@ $owner = $_SESSION["id"];
 					echo "<tr>
 					<th>Product Image</th>
 					<th>Product Name</th>
-					<th class='desc'>Description</th>
+					<th>Description</th>
 					<th>Price</font></th>
 					<th>Quantity</th>
 					<th>Date</th>
@@ -96,7 +96,7 @@ $owner = $_SESSION["id"];
 						echo "<tr>";
 						echo '<td><image src=images/' . $row['image'] . ' width = "100px" /></td>';
 						echo '<td>' . $row['name'] . '</td>';
-						echo '<td class="desc">' . $row['description'] . '</td>';
+						echo '<td>' . $row['description'] . '</td>';
 						echo '<td>$' . $row['price'] . '</td>';
 						echo '<td>' . $row['quantity'] . '</td>';
 						echo '<td>' . $row['date'] . '</td>';

@@ -34,10 +34,10 @@
 			</div>
 		</header>
 		<?php 
-			/*if($_SESSION['message'] != "" && !empty($_SESSION['message'])){
+			if($_SESSION['message'] != ""){
 				echo "<div class='notification'>".$_SESSION['message']."</div>"; //Global Notifications
 				$_SESSION['message'] = "";
-			}*/
+			}
 		
 		?>
 		

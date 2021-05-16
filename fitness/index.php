@@ -8,28 +8,21 @@
 					<tr>
 						<th>Image</th>
 						<th>Product</th>
-						<th class='desc'>Description</th>
-						<th>Quantity Left</th>
+						<th>Company</th>
+						<th>Category</th>
 						<th>Price</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-				<?php
-					$query = "SELECT * FROM products";
-					$result = mysqli_query($conn,$query);
-					while($row = mysqli_fetch_array( $result ))
-					{
-						echo "<tr>";
-						echo '<td><image src=images/' . $row['image'] . ' width = "100px" /></td>';
-						echo '<td>' . $row['name'] . '</td>';
-						echo '<td class="desc">' . $row['description'] . '</td>';
-						echo '<td>' . $row['quantity'] . '</td>';
-						echo '<td>$' . $row['price'] . '</td>';
-						echo '<td><a href="cart.php?id='.$row['pid'].'">Add to Cart</a></td>';
-						echo "</tr>";
-					}
-					?>
+					<tr>
+						<td><img src="images/img.png"/></td>
+						<td>Spark</td>
+						<td>Chevrolet</td>
+						<td>Economy</td>
+						<td>4</td>
+						<td><a href="cart.php?id=1">Add to Cart</a></td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
