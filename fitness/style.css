@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Lato:wght@300;400;700&display=swap');
+h1.logo{
+	font-family: 'Cookie';
+	font-size: 50px;
+	color: #ffb92a;
+	width: 30%;
+	margin-top: 0;
+}
+.row{
+	margin-left: 0;
+	margin-right: 0;
+}
+body, p, span, h1, h2, h3, h4, h5, h6, ul, li, a{
+	font-family: 'Lato';
+	color: #fff;
+}
+a{
+	color: #ffb92a;
+}
+body {
+    margin: 0;
+    padding: 0;
+	background: #efefef;
+}
+header {
+    padding: 25px;
+    text-align: center;
+}
+.container {
+    width: 100%;
+}
+h2.page-heading {
+    margin-top: 0;
+    text-align: center;
+}
+form {
+    width: 60%;
+    margin: 0 auto;
+	text-align: center;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input, select {
+    width: 285px;
+    padding: 5px 10px;
+    font-size: 15px;
+	color: #000;
+}
+button {
+    background: #ffb92a;
+    border: 1px solid #ffb92a;
+    color: #fff;
+    padding: 5px 50px;
+    font-size: 15px;
+}
+.menu{
+	width: 70%;
+	list-style-type: none;
+	margin-top: 15px;
+}
+.menu ul li{
+	float: left;
+}
+.head-row {
+    display: flex;
+}
+.menu li {
+    width: 12%;
+	color: #ffb92a;
+    float: left;
+	line-height: 30px;
+	margin-right: 5px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+.menu li a{ 
+    color: #ffb92a;
+    font-size: 15px;
+	text-decoration: none;
+}
+.menu li:hover, .menu li.active{
+    background: #ffb92a;
+    color: #fff;
+}
+.menu li:hover > a, .menu li.active a {
+    color: #fff;
+}
+input.gender {
+    width: 10px;
+}
+.car{
+	width: 100%;
+}
+.car-details,
+.user-details{
+	padding: 20px;
+	text-align: center;
+}
+.car-details .details,
+.user-details .details{
+	background: #ffb92a;
+	width: 100%;
+    float: left;
+}
+.car-details .details div{
+    width: calc(14.28% - 40px);
+}
+.car-details .details div,
+.user-details .details div {
+    float: left;
+    padding: 20px;
+}
+.book a, .edit-user a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+}
+.book a:hover, .edit-user a:hover {
+    text-decoration: underline;
+}
+img.user {
+    border-radius: 50%;
+    margin-bottom: 30px;
+    max-width: 250px;
+}
+body{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.login-page {
+    background-image: url(images/bg2.jpg);
+}
+.notification, .error {
+    padding: 15px;
+    border: 2px solid #fff;
+    width: 52%;
+    margin: 15px auto;
+    border-radius: 7px;
+    text-align: center;
+}
+.error {
+    border: 2px solid red;
+}
+.table-striped>tbody>tr:nth-of-type(odd),
+.table-striped>tbody>tr:nth-of-type(even),
+.table-striped>thead>tr{
+    background-color: #000;
+}
+.show{
+	opacity: 1;
+}
+input#filebutton {
+    color: #fff;
+}
+.nav-tabs .nav-item {
+    padding: 15px;
+    font-size: 16px;
+}
+.nav-tabs .nav-item.active, .nav-tabs .nav-item.active:hover {
+    background: rgba(0,0,0,0.8);
+    font-weight: 700;
+    border: 1px solid #ffb92a;
+	color: #ffb92a;
+}
+nav .nav-tabs {
+    display: block;
+    border-bottom: 1px solid #ffb92a;
+    margin-bottom: 50px;
+    padding-bottom: 13px;
+}
+nav a:hover{
+	color: #ffb92a;
+}
+input[type="submit"] {
+    background: #ffb92a;
+    border: 0;
+    color: #fff;
+    padding: 5px;
+    font-size: 21px;
+    border-radius: 4px;
+}
+#nav-profile table{
+	max-width: 85%;
+	background: #000;
+}
+table .desc {
+    max-width: 275px;
+}
+footer{
+	margin-top: 50px;
+	border-top: 1px solid #fff;
+	padding: 25px 0 15px;
+	background: #000;
+}
+footer .copyright{
+	padding-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
