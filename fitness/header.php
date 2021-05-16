@@ -1,6 +1,8 @@
 <?php include('db.php'); ?>
 <?php session_start(); ?>
 <?php 
+	ini_set('display_errors','Off');
+	ini_set('error_reporting', E_ALL );
 	$activePage = basename($_SERVER['PHP_SELF'], ".php");
 ?>
 <html>
@@ -8,12 +10,12 @@
 		<title>Buy & Sell Fitness</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css"/>
-		<link rel="stylesheet" href="style.css"/>
+		<link rel="stylesheet" href="assets/style.css"/>
 		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 		<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 		<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-		<script src="script.js"></script>
+		<script src="assets/script.js"></script>
 	</head>
 	<body class="login-page">
 		<header>
@@ -34,7 +36,7 @@
 			</div>
 		</header>
 		<?php 
-			if($_SESSION['message'] != ""){
+			if($_SESSION['message'] != "" && !empty($_SESSION['message'])){
 				echo "<div class='notification'>".$_SESSION['message']."</div>"; //Global Notifications
 				$_SESSION['message'] = "";
 			}

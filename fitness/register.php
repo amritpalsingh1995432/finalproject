@@ -31,7 +31,7 @@
 				<button name="register" type="submit">Register</button>
 				<button type="reset" class="reset">Reset</button>
 			</div>
-			<label class="register"><a href="index.html">Login</a></label>
+			<label class="register"><a href="login.php">Login</a></label>
 		</form> 
 	</div>
 </div>
@@ -54,6 +54,8 @@ if(isset($_POST["register"])){
 				$query = "INSERT INTO `users` (`name`, `email`, `password`, `gender`, `usertype`) VALUES ('".$name."', '".$email."', '".$password."', '".$gender."', '".$usertype."')";
 				if ($conn->query($query) === TRUE) {
 				  $_SESSION['message'] = $name."! Registeration Done.<br>Login to continue.";
+				  header('Location: login.php');
+				  exit;
 				} else {
 				  echo "Error: " . $query . "<br>" . $conn->error;
 				}

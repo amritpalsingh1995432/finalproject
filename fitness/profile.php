@@ -1,16 +1,21 @@
 <?php include("header.php");
-$owner = $_SESSION["id"];
+$owner    = $_SESSION["id"];
+$usertype = $_SESSION['usertype'];
 ?>
 <div class="container">
 	<div class="row">
 		<nav>
 			<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+				<?php if($usertype != "buyer"){ ?>
 				<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Add New Product</a>
 				<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Your Products</a>
-				<a class="nav-item nav-link" id="nav-order-tab" data-toggle="tab" href="#nav-order" role="tab" aria-controls="nav-order" aria-selected="false">Your Orders</a>
+				<?php } ?>
+				<a class="nav-item nav-link" id="nav-order-tab" data-toggle="tab" href="#nav-order" role="tab" aria-controls="nav-order" <?php if($usertype != "buyer"){ ?> aria-selected="false" <?php }else{ ?> aria-selected="true" <?php }?>>Your Orders</a>
+				<a class="nav-item nav-link" id="nav-msg-tab" data-toggle="tab" href="#nav-msg" role="tab" aria-controls="nav-msg" aria-selected="false">Messages</a>
 			</div>
 		</nav>
 		<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+			<?php if($usertype != "buyer"){ ?>
 			<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 				<form class="form-horizontal" method="POST" action="add_product.php" enctype="multipart/form-data">
 					<fieldset>
@@ -83,7 +88,7 @@ $owner = $_SESSION["id"];
 					echo "<tr>
 					<th>Product Image</th>
 					<th>Product Name</th>
-					<th>Description</th>
+					<th class='desc'>Description</th>
 					<th>Price</font></th>
 					<th>Quantity</th>
 					<th>Date</th>
@@ -96,7 +101,7 @@ $owner = $_SESSION["id"];
 						echo "<tr>";
 						echo '<td><image src=images/' . $row['image'] . ' width = "100px" /></td>';
 						echo '<td>' . $row['name'] . '</td>';
-						echo '<td>' . $row['description'] . '</td>';
+						echo '<td class="desc">' . $row['description'] . '</td>';
 						echo '<td>$' . $row['price'] . '</td>';
 						echo '<td>' . $row['quantity'] . '</td>';
 						echo '<td>' . $row['date'] . '</td>';
@@ -108,6 +113,7 @@ $owner = $_SESSION["id"];
 					echo "</table>";
 				?>
 			</div>
+			<?php } ?>
 			
 			<div class="tab-pane fade" id="nav-order" role="tabpanel" aria-labelledby="nav-order-tab">
 				<?php
@@ -132,6 +138,35 @@ $owner = $_SESSION["id"];
 						echo '<td>$' . $row['price'] . '</td>';
 						echo '<td>' . $row['date'] . '</td>';
 						echo '<td>Confirmed</td>';
+						echo "</tr>";
+					}
+
+					echo "</table>";
+				?>
+			</div>
+			<div class="tab-pane fade" id="nav-msg" role="tabpanel" aria-labelledby="nav-msg-tab">
+				<?php
+					$query = "SELECT * FROM `chat` WHERE `user_to` = '$owner' ";
+					$result = mysqli_query($conn,$query);
+					echo "<table class='table'>";
+					echo "<tr>
+					<th>Sender Name</th>
+					<th>Topic</th>
+					<th>Message</th>
+					<th>Sender Email</th>
+					<th>Sender Phone</th>
+					<th>Action</th>
+					</tr>";
+
+					while($row = mysqli_fetch_array( $result ))
+					{
+						echo "<tr>";
+						echo '<td>' . $row['contactname'] . '</td>';
+						echo '<td>' . $row['contacttopic'] . '</td>';
+						echo '<td>' . $row['message'] . '</td>';
+						echo '<td>' . $row['contactemail'] . '</td>';
+						echo '<td>' . $row['contactphone'] . '</td>';
+						echo '<td><a href="#">Reply</a></td>';
 						echo "</tr>";
 					}
 

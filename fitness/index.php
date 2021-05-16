@@ -8,21 +8,28 @@
 					<tr>
 						<th>Image</th>
 						<th>Product</th>
-						<th>Company</th>
-						<th>Category</th>
+						<th class='desc'>Description</th>
+						<th>Quantity Left</th>
 						<th>Price</th>
-						<th>Action</th>
+						<th class="action">Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td><img src="images/img.png"/></td>
-						<td>Spark</td>
-						<td>Chevrolet</td>
-						<td>Economy</td>
-						<td>4</td>
-						<td><a href="cart.php?id=1">Add to Cart</a></td>
-					</tr>
+				<?php
+					$query = "SELECT * FROM products";
+					$result = mysqli_query($conn,$query);
+					while($row = mysqli_fetch_array( $result ))
+					{
+						echo "<tr>";
+						echo '<td><image src=images/' . $row['image'] . ' width = "100px" /></td>';
+						echo '<td>' . $row['name'] . '</td>';
+						echo '<td class="desc">' . $row['description'] . '</td>';
+						echo '<td>' . $row['quantity'] . '</td>';
+						echo '<td>$' . $row['price'] . '</td>';
+						echo '<td class="action"><a class="addtocart" href="cart.php?id='.$row['pid'].'">Add to Cart</a><br><br>'.(($_SESSION['usertype']=='buyer')?'<a href="contact.php?id='.$row['owner_id'].'">Contact Seller</a>':"").'</td>';
+						echo "</tr>";
+					}
+					?>
 				</tbody>
 			</table>
 		</div>

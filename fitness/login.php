@@ -31,6 +31,8 @@ if(isset($_POST["login"])){
 		echo "Welcome ".$row["name"];
 		$_SESSION['id'] = $row["id"];
 		$_SESSION['name'] = $row["name"];
+		$_SESSION['email'] = $row["email"];
+		$_SESSION['usertype'] = $row["usertype"];
 		header("location: index.php");
 	}else{
 		echo "<div class='error'>Either email or password is incorrect!</div>";

@@ -15,7 +15,7 @@ body, p, span, h1, h2, h3, h4, h5, h6, ul, li, a{
 	font-family: 'Lato';
 	color: #fff;
 }
-a{
+a, a:hover{
 	color: #ffb92a;
 }
 body {
@@ -47,6 +47,7 @@ input, select {
     width: 285px;
     padding: 5px 10px;
     font-size: 15px;
+	color: #000;
 }
 button {
     background: #ffb92a;
@@ -132,7 +133,7 @@ body{
     background-repeat: no-repeat;
 }
 .login-page {
-    background-image: url(images/bg2.jpg);
+    background-image: url(../images/bg2.jpg);
 }
 .notification, .error {
     padding: 15px;
@@ -153,20 +154,81 @@ body{
 .show{
 	opacity: 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+input#filebutton {
+    color: #fff;
+}
+.nav-tabs .nav-item {
+    padding: 15px;
+    font-size: 16px;
+}
+.nav-tabs .nav-item.active, .nav-tabs .nav-item.active:hover {
+    background: rgba(0,0,0,0.8);
+    font-weight: 700;
+    border: 1px solid #ffb92a;
+	color: #ffb92a;
+}
+nav .nav-tabs {
+    display: block;
+    border-bottom: 1px solid #ffb92a;
+    margin-bottom: 50px;
+    padding-bottom: 13px;
+}
+nav a:hover{
+	color: #ffb92a;
+}
+input[type="submit"] {
+    background: #ffb92a;
+    border: 0;
+    color: #fff;
+    padding: 5px;
+    font-size: 21px;
+    border-radius: 4px;
+}
+#nav-profile table, #nav-msg table{
+	max-width: 85%;
+	background: #000;
+}
+table .desc {
+    max-width: 275px;
+}
+footer{
+	margin-top: 50px;
+	border-top: 1px solid #fff;
+	padding: 25px 0 15px;
+	background: #000;
+}
+footer .copyright{
+	padding-top: 10px;
+}
+a.addtocart {
+    background: #ffb92a;
+    color: #000;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+table .action {
+    width: 100px!important;
+    text-align: center;
+}
+.contact-page input {
+    width: 48%;
+    margin-bottom: 10px;
+    float: left;
+    margin-right: 2%;
+}
+.contact-page textarea {
+    width: 98%;
+    float: left;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    height: 180px;
+	color: #000;
+}
+.contact-page input[type="submit"] {
+    margin-left: 25%;
+}
 
 
 
