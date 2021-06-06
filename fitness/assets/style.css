@@ -68,7 +68,7 @@ button {
     display: flex;
 }
 .menu li {
-    width: 12%;
+    width: 15%;
 	color: #ffb92a;
     float: left;
 	line-height: 30px;
@@ -184,7 +184,7 @@ input[type="submit"] {
     font-size: 21px;
     border-radius: 4px;
 }
-#nav-profile table, #nav-msg table{
+#nav-profile table, #nav-msg table, #nav-order table, #nav-coupon table{
 	max-width: 85%;
 	background: #000;
 }
@@ -229,11 +229,38 @@ table .action {
 .contact-page input[type="submit"] {
     margin-left: 25%;
 }
-
-
-
-
-
-
-
-
+.cart form {
+    margin: 0;
+    text-align: left;
+}
+.cart form.couponform{
+    width: 100%;
+}
+.cart form.couponform input[type="submit"] {
+    font-size: 17px;
+}
+.checked {
+  color: #ffb92a;
+}
+table .action.mm {
+    width: 165px!important;
+}
+table th.pricee {
+    width: 150px;
+}
+body.about, body.services, body.terms, #nav-content table{
+    background: #000;
+}
+.page-container {
+    min-height: 300px;
+}
+.overlay{
+	position: relative;
+}
+.overlay h2.page-heading {
+    position: absolute;
+    top: 25%;
+    left: 42%;
+    width: 16%;
+    background: #000;
+}

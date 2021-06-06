@@ -4,6 +4,9 @@
 		<?php			
 			unset($_SESSION["id"]);  
 			unset($_SESSION['name']);
+			unset($_SESSION['email']);
+			unset($_SESSION['usertype']);
+			unset($_SESSION['cart']);
 			header("Location: login.php");
 		?>
 	</div>

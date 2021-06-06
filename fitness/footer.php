@@ -1,4 +1,4 @@
-
+</div>
 <footer class="bg-light text-center text-lg-start">
   <div class="container p-4">
     <div class="row">
@@ -18,7 +18,7 @@
             <a href="/fitness" class="text-dark">Products</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Cart</a>
+            <a href="/fitness/cart.php" class="text-dark">Cart</a>
           </li>
         </ul>
       </div>
@@ -26,13 +26,13 @@
         <h5 class="text-uppercase">Useful Links</h5>
         <ul class="list-unstyled mb-0">
           <li>
-            <a href="#!" class="text-dark">About Us</a>
+            <a href="/fitness/about.php" class="text-dark">About Us</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Our Services</a>
+            <a href="/fitness/services.php" class="text-dark">Our Services</a>
           </li>
           <li>
-            <a href="#!" class="text-dark">Terms & Conditions</a>
+            <a href="/fitness/terms.php" class="text-dark">Terms & Conditions</a>
           </li>
         </ul>
       </div>

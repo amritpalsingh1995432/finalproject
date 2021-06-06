@@ -17,8 +17,12 @@ if($_POST["submit"]) {
 	
 	$check = getimagesize($_FILES["filebutton"]["tmp_name"]);
 	if($check !== false) {
-		$query = "INSERT INTO `products` (`name`,`description`,`image`,`price`,`category`,`quantity`,`date`,`owner_id`) VALUES ('$product_name','$product_description','$image','$price','$product_category','$available_quantity',CURDATE(),'$owner')";
+		$query = "INSERT INTO `products` (`name`,`description`,`image`,`price`,`category`,`quantity`,`date`,`producttype`,`owner_id`) VALUES ('$product_name','$product_description','$image','$price','$product_category','$available_quantity',CURDATE(),'simple','$owner')";
 		mysqli_query($conn,$query);
+		$last_id = $conn->insert_id;
+		$queryr = "INSERT INTO `product_rating` (`productid`, `userid`, `rating`) VALUES ('$last_id', '0', '0')";
+		mysqli_query($conn,$queryr);
+		
 		//echo "File is an image - " . $check["mime"] . ".";
 		$uploadOk = 1;
 		echo "<script>
@@ -56,6 +60,30 @@ if($_POST["submit"]) {
 			echo "Sorry, there was an error uploading your file.";
 		}
 	}
+}
+if($_POST["submitcoupon"]) {
+	
+	$coupon_name = $_POST["couponname"];
+	$coupon_price = $_POST["couponprice"];
+	
+	$query = "INSERT INTO `discounts` (`coupon_code`,`amount`,`owner_id`) VALUES ('$coupon_name','$coupon_price','$owner')";
+	mysqli_query($conn,$query);
+		
+	echo "<script>
+			alert('Coupon Added Successfully!');
+			window.location.href='profile.php';
+		</script>";	
+}
+if($_POST["submitrating"]) {	
+	$productid = $_POST["productid"];
+	$rating = $_POST["rating"];
+	$userid = $_POST["userid"];	
+	$query = "INSERT INTO `product_rating` (`productid`,`userid`,`rating`) VALUES ('$productid','$userid','$rating')";
+	mysqli_query($conn,$query);		
+	echo "<script>
+			alert('Product Rated Successfully!');
+			window.location.href='profile.php';
+		</script>";	
 }
 include("footer.php");
 ?>
